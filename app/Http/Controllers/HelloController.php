@@ -4,9 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+
 class HelloController extends Controller
 {
-	public function index($id='noname', $pass='unknown') {
+	
+	public function __invoke() {
 
 		return <<<EOF
 <html>
@@ -18,15 +20,10 @@ h1 { font-size:100pt; text-align:right; color:#eee; margin:-40px 0px -50px 0px; 
 </style>
 </head>
 <body>
-	<h1>Hello</h1>
-	<p>これは、Hellorコントローラのindexアクションです。</p>
-	<ul>
-		<li>ID: {$id}</li>
-		<li>PASS: {$pass}</li>
-	</ul>
+	<h1>SingleAction</h1>
+	<p>これは、シングルコントローラのindexアクションです。</p>
 </body>
 </html>
 EOF;
-
 	}
 }
